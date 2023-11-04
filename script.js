@@ -3,11 +3,35 @@ const numberBtn = [...document.getElementsByClassName('numberBtn')];
 const operationBtn = [...document.getElementsByClassName('operationBtn')];
 const prefixBtn = document.getElementById('prefix');
 const decimalBtn = document.getElementById('decimal');
+const equalBtn = document.getElementById('equal');
 const clearBtn = document.getElementById('clear');
 const removeBtn = document.getElementById('remove');
 const firstNumber = document.getElementById('firstNumber');
 const secondNumber = document.getElementById('secondNumber');
 const operation = document.getElementById('operation');
+const result = document.getElementById('result');
+
+function addNumber(a, b) {
+    return a + b;
+}
+
+function subtractNumber(a, b) {
+    return a - b;
+}
+
+function multiplyNumber(a, b) {
+    return a * b;
+}
+
+function divideNumber(a, b) {
+    return a / b;
+}
+
+function modularNumber(a, b) {
+    return a % b;
+}
+
+
 
 numberBtn.forEach(element => {
     element.addEventListener('click', (e) => operation.innerText ? secondNumber.innerText += e.target.innerText : firstNumber.innerText += e.target.innerText);
@@ -38,6 +62,28 @@ operationBtn.forEach(element => {
             operation.innerText += e.target.innerText;
         }
     });
+});
+
+equalBtn.addEventListener('click', () => {
+    const num1 = Number(firstNumber.innerText);
+    const num2 = Number(secondNumber.innerText);
+    const operate = operation.innerText;
+
+    if (operate === '+') {
+        result.innerText = '= ' + addNumber(num1, num2);
+    }
+    if (operate === '-') {
+        result.innerText = '= ' + subtractNumber(num1, num2);
+    }
+    if (operate === 'x') {
+        result.innerText = '= ' + multiplyNumber(num1, num2);
+    }
+    if (operate === '/') {
+        result.innerText = '= ' + divideNumber(num1, num2);
+    }
+    if (operate === '%') {
+        result.innerText = '= ' + modularNumber(num1, num2);
+    }
 });
 
 clearBtn.addEventListener('click', () => {
