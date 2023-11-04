@@ -96,11 +96,15 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-basis: 23%;
-    background-color: gray;
+    background-color: hsl(0, 5%, 75%);
     cursor: pointer;
 }
 
 .button,
 .display {
     font: bolder 1.5rem Arial;
+}
+
+.operation, .control {
+    background-color: hsl(30, 5%, 50%);
 }
