@@ -31,10 +31,18 @@ function modularNumber(a, b) {
     return a % b;
 }
 
-
+function clear() {
+    firstNumber.innerText = '';
+    secondNumber.innerText = '';
+    operation.innerText = '';
+    result.innerText = '';
+}
 
 numberBtn.forEach(element => {
-    element.addEventListener('click', (e) => operation.innerText ? secondNumber.innerText += e.target.innerText : firstNumber.innerText += e.target.innerText);
+    element.addEventListener('click', (e) => {
+        if (result.innerText) clear();
+        operation.innerText ? secondNumber.innerText += e.target.innerText : firstNumber.innerText += e.target.innerText;
+    });
 });
 
 prefixBtn.addEventListener('click', () => {
@@ -86,12 +94,7 @@ equalBtn.addEventListener('click', () => {
     }
 });
 
-clearBtn.addEventListener('click', () => {
-    firstNumber.innerText = '';
-    secondNumber.innerText = '';
-    operation.innerText = '';
-    result.innerText = '';
-});
+clearBtn.addEventListener('click', () => clear());
 
 removeBtn.addEventListener('click', () => {
     if (secondNumber.innerText) {
