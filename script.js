@@ -90,6 +90,7 @@ clearBtn.addEventListener('click', () => {
     firstNumber.innerText = '';
     secondNumber.innerText = '';
     operation.innerText = '';
+    result.innerText = '';
 });
 
 removeBtn.addEventListener('click', () => {
