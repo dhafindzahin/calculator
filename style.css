@@ -112,3 +112,7 @@ h6 {
 .controlBtn {
 	background-color: hsl(30, 5%, 50%);
 }
+
+.equalBtn {
+    background-color: hsl(43, 50%, 49%);
+}
