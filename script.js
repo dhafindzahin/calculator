@@ -117,26 +117,42 @@ document.addEventListener("keydown", (e) => {
     if (['+', '-', '*', '/', '%'].includes(e.key) && firstNumber.innerText && !secondNumber.innerText) {
         operation.innerText = e.key;
     }
-    if (e.key === '=') {
+    if (e.key === '.') {
+        if (operation.innerText) {
+            secondNumber.innerText.includes('.') || !secondNumber.innerText ? null : secondNumber.innerText += '.';
+        }
+        else {
+            firstNumber.innerText.includes('.') || !firstNumber.innerText ? null : firstNumber.innerText += '.';
+        }
+    }
+    if (e.key === '!') {
+        if (operation.innerText) {
+            secondNumber.innerText.includes('-') ? secondNumber.innerText = secondNumber.innerText.slice(1) : secondNumber.innerText = '-' + secondNumber.innerText;
+        }
+        else {
+            firstNumber.innerText.includes('-') ? firstNumber.innerText = firstNumber.innerText.slice(1) : firstNumber.innerText = '-' + firstNumber.innerText;
+        }
+    }
+    if (e.key === '=' || e.key === 'Enter') {
         const num1 = Number(firstNumber.innerText);
-    const num2 = Number(secondNumber.innerText);
-    const operate = operation.innerText;
+        const num2 = Number(secondNumber.innerText);
+        const operate = operation.innerText;
 
-    if (operate === '+') {
-        result.innerText = '= ' + addNumber(num1, num2);
-    }
-    if (operate === '-') {
-        result.innerText = '= ' + subtractNumber(num1, num2);
-    }
-    if (operate === 'x') {
-        result.innerText = '= ' + multiplyNumber(num1, num2);
-    }
-    if (operate === '/') {
-        result.innerText = '= ' + divideNumber(num1, num2);
-    }
-    if (operate === '%') {
-        result.innerText = '= ' + modularNumber(num1, num2);
-    }
+        if (operate === '+') {
+            result.innerText = '= ' + addNumber(num1, num2);
+        }
+        if (operate === '-') {
+            result.innerText = '= ' + subtractNumber(num1, num2);
+        }
+        if (operate === 'x') {
+            result.innerText = '= ' + multiplyNumber(num1, num2);
+        }
+        if (operate === '/') {
+            result.innerText = '= ' + divideNumber(num1, num2);
+        }
+        if (operate === '%') {
+            result.innerText = '= ' + modularNumber(num1, num2);
+        }
     }
     if (e.key === 'Backspace') {
         if (secondNumber.innerText) {
@@ -149,6 +165,6 @@ document.addEventListener("keydown", (e) => {
             firstNumber.innerText = firstNumber.innerText.slice(0, -1);
         }
     }
-    if (e.key === 'Backspace' && e.ctrlKey === true) clear()
+    if (e.key === 'Backspace' && e.shiftKey === true) clear();
     console.log(e);
 });
