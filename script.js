@@ -80,6 +80,7 @@ operationBtn.forEach(element => {
 });
 
 equalBtn.addEventListener('click', () => {
+    if (!secondNumber.innerText) return
     const num1 = Number(firstNumber.innerText);
     const num2 = Number(secondNumber.innerText);
     const operate = operation.innerText;
@@ -153,7 +154,7 @@ document.addEventListener("keydown", (e) => {
             firstNumber.innerText.includes('-') ? firstNumber.innerText = firstNumber.innerText.slice(1) : firstNumber.innerText = '-' + firstNumber.innerText;
         }
     }
-    if (e.key === '=' || e.key === 'Enter') {
+    if ((e.key === '=' || e.key === 'Enter') && secondNumber.innerText) {
         const num1 = Number(firstNumber.innerText);
         const num2 = Number(secondNumber.innerText);
         const operate = operation.innerText;
