@@ -24,7 +24,7 @@ function multiplyNumber(a, b) {
 }
 
 function divideNumber(a, b) {
-    if (b === 0) return 'lmao'
+    if (b === 0) return 'lmao';
     return a / b;
 }
 
@@ -68,7 +68,7 @@ decimalBtn.addEventListener('click', () => {
 operationBtn.forEach(element => {
     element.addEventListener('click', (e) => {
         if (result.innerText) {
-            firstNumber.innerText = result.innerText.slice(1);
+            firstNumber.innerText = isNaN(result.innerText.slice(1)) ? 0 : result.innerText.slice(1);
             operation.innerText = e.target.innerText;
             secondNumber.innerText = '';
             result.innerText = '';
@@ -122,8 +122,16 @@ document.addEventListener("keydown", (e) => {
         if (result.innerText) clear();
         operation.innerText ? secondNumber.innerText += e.key : firstNumber.innerText += e.key;
     }
-    if (['+', '-', '*', '/', '%'].includes(e.key) && firstNumber.innerText && !secondNumber.innerText) {
-        operation.innerText = e.key;
+    if (['+', '-', '*', '/', '%'].includes(e.key)) {
+        if (result.innerText) {
+            firstNumber.innerText = isNaN(result.innerText.slice(1)) ? 0 : result.innerText.slice(1);
+            operation.innerText = e.key;
+            secondNumber.innerText = '';
+            result.innerText = '';
+        }
+        else if (firstNumber.innerText && !secondNumber.innerText) {
+            operation.innerText = e.key;
+        }
     }
     if (e.key === '.') {
         if (operation.innerText) {
