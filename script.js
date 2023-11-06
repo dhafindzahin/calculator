@@ -123,14 +123,17 @@ document.addEventListener("keydown", (e) => {
         operation.innerText ? secondNumber.innerText += e.key : firstNumber.innerText += e.key;
     }
     if (['+', '-', '*', '/', '%'].includes(e.key)) {
+        let operate = e.key
+        if (operate === '*') operate = 'x'
+        console.log(operate)
         if (result.innerText) {
             firstNumber.innerText = isNaN(result.innerText.slice(1)) ? 0 : result.innerText.slice(1);
-            operation.innerText = e.key;
+            operation.innerText = operate;
             secondNumber.innerText = '';
             result.innerText = '';
         }
         else if (firstNumber.innerText && !secondNumber.innerText) {
-            operation.innerText = e.key;
+            operation.innerText = operate;
         }
     }
     if (e.key === '.') {
