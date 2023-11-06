@@ -184,5 +184,4 @@ document.addEventListener("keydown", (e) => {
         result.innerText = '';
     }
     if (e.key === 'Backspace' && e.shiftKey === true) clear();
-    console.log(e);
 });
