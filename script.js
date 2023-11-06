@@ -57,6 +57,7 @@ prefixBtn.addEventListener('click', () => {
 });
 
 decimalBtn.addEventListener('click', () => {
+    if (result.innerText) return
     if (operation.innerText) {
         secondNumber.innerText.includes('.') || !secondNumber.innerText ? null : secondNumber.innerText += '.';
     }
@@ -138,6 +139,7 @@ document.addEventListener("keydown", (e) => {
         }
     }
     if (e.key === '.') {
+        if (result.innerText) return
         if (operation.innerText) {
             secondNumber.innerText.includes('.') || !secondNumber.innerText ? null : secondNumber.innerText += '.';
         }
