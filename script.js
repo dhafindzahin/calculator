@@ -164,6 +164,7 @@ document.addEventListener("keydown", (e) => {
         else if (firstNumber.innerText) {
             firstNumber.innerText = firstNumber.innerText.slice(0, -1);
         }
+        result.innerText = ''
     }
     if (e.key === 'Backspace' && e.shiftKey === true) clear();
     console.log(e);
