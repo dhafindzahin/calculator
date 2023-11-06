@@ -109,6 +109,7 @@ removeBtn.addEventListener('click', () => {
     else if (firstNumber.innerText) {
         firstNumber.innerText = firstNumber.innerText.slice(0, -1);
     }
+    result.innerText = '';
 });
 
 clearBtn.addEventListener('click', () => clear());
