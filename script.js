@@ -46,6 +46,7 @@ numberBtn.forEach(element => {
 });
 
 prefixBtn.addEventListener('click', () => {
+    if (result.innerText) return;
     if (operation.innerText) {
         secondNumber.innerText.includes('-') ? secondNumber.innerText = secondNumber.innerText.slice(1) : secondNumber.innerText = '-' + secondNumber.innerText;
     }
@@ -69,7 +70,7 @@ operationBtn.forEach(element => {
             firstNumber.innerText = result.innerText.slice(1);
             operation.innerText = e.target.innerText;
             secondNumber.innerText = '';
-            result.innerText = ''
+            result.innerText = '';
         }
         else if (firstNumber.innerText && !secondNumber.innerText) {
             operation.innerText = e.target.innerText;
@@ -132,6 +133,7 @@ document.addEventListener("keydown", (e) => {
         }
     }
     if (e.key === '!') {
+        if (result.innerText) return;
         if (operation.innerText) {
             secondNumber.innerText.includes('-') ? secondNumber.innerText = secondNumber.innerText.slice(1) : secondNumber.innerText = '-' + secondNumber.innerText;
         }
