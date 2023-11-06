@@ -24,6 +24,7 @@ function multiplyNumber(a, b) {
 }
 
 function divideNumber(a, b) {
+    if (b === 0) return 'lmao'
     return a / b;
 }
 
