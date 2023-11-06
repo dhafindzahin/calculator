@@ -65,9 +65,14 @@ decimalBtn.addEventListener('click', () => {
 
 operationBtn.forEach(element => {
     element.addEventListener('click', (e) => {
-        if (firstNumber.innerText && !secondNumber.innerText) {
-            operation.innerText = '';
-            operation.innerText += e.target.innerText;
+        if (result.innerText) {
+            firstNumber.innerText = result.innerText.slice(1);
+            operation.innerText = e.target.innerText;
+            secondNumber.innerText = '';
+            result.innerText = ''
+        }
+        else if (firstNumber.innerText && !secondNumber.innerText) {
+            operation.innerText = e.target.innerText;
         }
     });
 });
@@ -164,7 +169,7 @@ document.addEventListener("keydown", (e) => {
         else if (firstNumber.innerText) {
             firstNumber.innerText = firstNumber.innerText.slice(0, -1);
         }
-        result.innerText = ''
+        result.innerText = '';
     }
     if (e.key === 'Backspace' && e.shiftKey === true) clear();
     console.log(e);
