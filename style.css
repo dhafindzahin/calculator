@@ -8,13 +8,16 @@
 *::after {
 	box-sizing: border-box;
 }
+
 * {
 	margin: 0;
 }
+
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
+
 img,
 picture,
 video,
@@ -23,12 +26,14 @@ svg {
 	display: block;
 	max-width: 100%;
 }
+
 input,
 button,
 textarea,
 select {
 	font: inherit;
 }
+
 p,
 h1,
 h2,
@@ -38,10 +43,12 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
 #root,
 #__next {
 	isolation: isolate;
 }
+
 /*
     CSS Reset End
 */
@@ -114,5 +121,30 @@ h6 {
 }
 
 .equalBtn {
-    background-color: hsl(43, 50%, 49%);
+	background-color: hsl(43, 50%, 49%);
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #1a1d1e;
+		color: #fffdfa;
+	}
+
+	.display {
+		background-color: #008d6a;
+	}
+
+	.numberBtn,
+	.modifyBtn {
+		background-color: #42484b;
+	}
+
+	.operationBtn,
+	.controlBtn {
+		background-color: #6a7277;
+	}
+
+	.equalBtn {
+		background-color: #a58637;
+	}
 }
