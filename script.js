@@ -57,6 +57,17 @@ function modularNumber(a, b) {
   return a % b;
 }
 
+function remove() {
+  if (secondNumber.innerText) {
+    secondNumber.innerText = secondNumber.innerText.slice(0, -1);
+  } else if (operation.innerText) {
+    operation.innerText = operation.innerText.slice(0, -1);
+  } else if (firstNumber.innerText) {
+    firstNumber.innerText = firstNumber.innerText.slice(0, -1);
+  }
+  result.innerText = "";
+}
+
 function clear() {
   firstNumber.innerText = "";
   secondNumber.innerText = "";
@@ -139,16 +150,7 @@ equalBtn.addEventListener("click", () => {
   }
 });
 
-removeBtn.addEventListener("click", () => {
-  if (secondNumber.innerText) {
-    secondNumber.innerText = secondNumber.innerText.slice(0, -1);
-  } else if (operation.innerText) {
-    operation.innerText = operation.innerText.slice(0, -1);
-  } else if (firstNumber.innerText) {
-    firstNumber.innerText = firstNumber.innerText.slice(0, -1);
-  }
-  result.innerText = "";
-});
+removeBtn.addEventListener("click", () => remove());
 
 clearBtn.addEventListener("click", () => clear());
 
@@ -219,15 +221,6 @@ document.addEventListener("keydown", (e) => {
       result.innerText = "= " + modularNumber(num1, num2);
     }
   }
-  if (e.key === "Backspace") {
-    if (secondNumber.innerText) {
-      secondNumber.innerText = secondNumber.innerText.slice(0, -1);
-    } else if (operation.innerText) {
-      operation.innerText = operation.innerText.slice(0, -1);
-    } else if (firstNumber.innerText) {
-      firstNumber.innerText = firstNumber.innerText.slice(0, -1);
-    }
-    result.innerText = "";
-  }
-  if (e.key === "Backspace" && e.shiftKey === true) clear();
+  if (e.key === "Backspace") remove()
+    if (e.key === "Backspace" && e.shiftKey === true) clear();
 });
