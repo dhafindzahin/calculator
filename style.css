@@ -56,21 +56,22 @@ h6 {
 .theme {
   display: flex;
   justify-content: right;
-  padding-top: 10px;
   padding-right: 20px;
+  align-self: flex-end;
 }
 
 .wrapper {
+  padding-top: 1.5rem;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .calculator {
   width: 33%;
   min-width: 25rem;
-  height: 80%;
+  height: 100%;
   min-height: 30rem;
   border-radius: 20px;
   background-color: black;
@@ -152,4 +153,41 @@ body.dark {
 
 .dark .equalBtn {
   background-color: #a58637;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  padding: 10px;
+  margin-top: 50px;
+  gap: 5px;
+  font-size: larger;
+  font-weight: bolder;
+  background-color: hsl(0, 5%, 75%);
+  text-decoration: none;
+}
+
+.dark .footer {
+  background-color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon {
+  padding: 5px;
+}
+
+.icon:hover {
+  animation: grow 300ms forwards;
+  transition: ease-in-out;
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1.3, 1.3) rotateY(360deg);
+  }
 }

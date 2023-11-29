@@ -14,6 +14,8 @@ const result = document.getElementById("result");
 const themeBtn = document.getElementById("themeBtn");
 const themeBtnPath = themeBtn.querySelector("path");
 const body = document.getElementById("body");
+const githubWhite = document.getElementById("github-white");
+const githubDark = document.getElementById("github-dark");
 
 // Theme Setup
 if (
@@ -21,6 +23,7 @@ if (
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
   body.classList.add("dark");
+  githubDark.classList.add("hidden");
 }
 
 body.classList.contains("dark")
@@ -29,9 +32,15 @@ body.classList.contains("dark")
 
 themeBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
-  body.classList.contains("dark")
-    ? themeBtnPath.setAttribute("fill", "white")
-    : themeBtnPath.setAttribute("fill", "dark");
+  if (body.classList.contains("dark")) {
+    themeBtnPath.setAttribute("fill", "white");
+    githubDark.classList.add("hidden");
+    githubWhite.classList.remove("hidden");
+  } else {
+    themeBtnPath.setAttribute("fill", "dark");
+    githubWhite.classList.add("hidden");
+    githubDark.classList.remove("hidden");
+  }
 });
 
 // Calculator Functions
@@ -221,6 +230,6 @@ document.addEventListener("keydown", (e) => {
       result.innerText = "= " + modularNumber(num1, num2);
     }
   }
-  if (e.key === "Backspace") remove()
-    if (e.key === "Backspace" && e.shiftKey === true) clear();
+  if (e.key === "Backspace") remove();
+  if (e.key === "Backspace" && e.shiftKey === true) clear();
 });

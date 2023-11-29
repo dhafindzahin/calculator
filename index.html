@@ -1,67 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="image/calculator.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Calculator</title>
-	<link rel="shortcut icon" href="image/calculator.png" type="image/x-icon" />
-	<link rel="stylesheet" href="style.css" />
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-</head>
-
-<body id="body">
-	<div class="theme">
-		<svg width="50px" height="50px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink" id="themeBtn">
-			<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-			<g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-				<g id="ic_fluent_dark_theme_24_regular" fill="#212121" fill-rule="nonzero">
-					<path
-						d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z">
-					</path>
-				</g>
-			</g>
-		</svg>
-	</div>
-	<div class="wrapper">
-		<div class="calculator">
-			<div class="display">
-				<div class="previous" id="calculation">
-					<span id="firstNumber"> </span>
-					<span id="operation"></span>
-					<span id="secondNumber"></span>
-				</div>
-				<div id="result"></div>
-			</div>
-			<div class="input">
-				<div class="button controlBtn" id="clear">C</div>
-				<div class="button controlBtn" id="remove">
-					<span class="material-symbols-outlined"> backspace </span>
-				</div>
-				<div class="button operationBtn">%</div>
-				<div class="button operationBtn">/</div>
-				<div class="button numberBtn">7</div>
-				<div class="button numberBtn">8</div>
-				<div class="button numberBtn">9</div>
-				<div class="button operationBtn">x</div>
-				<div class="button numberBtn">4</div>
-				<div class="button numberBtn">5</div>
-				<div class="button numberBtn">6</div>
-				<div class="button operationBtn">-</div>
-				<div class="button numberBtn">1</div>
-				<div class="button numberBtn">2</div>
-				<div class="button numberBtn">3</div>
-				<div class="button operationBtn">+</div>
-				<div class="button modifyBtn" id="prefix"><sup>+</sup>/<sub>-</sub></div>
-				<div class="button numberBtn">0</div>
-				<div class="button modifyBtn" id="decimal">.</div>
-				<div class="button equalBtn" id="equal">=</div>
-			</div>
-		</div>
-	</div>
-</body>
-<script src="script.js"></script>
-
+  <body id="body">
+    <div class="wrapper">
+      <div class="theme">
+        <svg
+          width="50px"
+          height="50px"
+          viewBox="0 0 24 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          id="themeBtn"
+        >
+          <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+          <g
+            id="🔍-Product-Icons"
+            stroke="none"
+            stroke-width="1"
+            fill="currentColor"
+            fill-rule="evenodd"
+          >
+            <g
+              id="ic_fluent_dark_theme_24_regular"
+              fill="#212121"
+              fill-rule="nonzero"
+            >
+              <path
+                d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+              ></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="calculator">
+        <div class="display">
+          <div class="previous" id="calculation">
+            <span id="firstNumber"> </span>
+            <span id="operation"></span>
+            <span id="secondNumber"></span>
+          </div>
+          <div id="result"></div>
+        </div>
+        <div class="input">
+          <div class="button controlBtn" id="clear">C</div>
+          <div class="button controlBtn" id="remove">
+            <span class="material-symbols-outlined"> backspace </span>
+          </div>
+          <div class="button operationBtn">%</div>
+          <div class="button operationBtn">/</div>
+          <div class="button numberBtn">7</div>
+          <div class="button numberBtn">8</div>
+          <div class="button numberBtn">9</div>
+          <div class="button operationBtn">x</div>
+          <div class="button numberBtn">4</div>
+          <div class="button numberBtn">5</div>
+          <div class="button numberBtn">6</div>
+          <div class="button operationBtn">-</div>
+          <div class="button numberBtn">1</div>
+          <div class="button numberBtn">2</div>
+          <div class="button numberBtn">3</div>
+          <div class="button operationBtn">+</div>
+          <div class="button modifyBtn" id="prefix">
+            <sup>+</sup>/<sub>-</sub>
+          </div>
+          <div class="button numberBtn">0</div>
+          <div class="button modifyBtn" id="decimal">.</div>
+          <div class="button equalBtn" id="equal">=</div>
+        </div>
+      </div>
+      <footer class="footer" id="footer">
+        Make by dhafindzahin
+        <a href="https://github.com/dhafindzahin/calculator">
+          <img
+            id="github-white"
+            src="image/github-mark-white.svg"
+            alt="github mark white"
+            width="40px"
+            height="40px"
+            class="icon"
+          />
+          <img
+            id="github-dark"
+            src="image/github-mark.svg"
+            alt="github mark white"
+            width="40px"
+            height="40px"
+            class="icon"
+          />
+        </a>
+      </footer>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
