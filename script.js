@@ -26,6 +26,10 @@ if (
   githubDark.classList.add("hidden");
 }
 
+else {
+  githubWhite.classList.add("hidden");
+}
+
 body.classList.contains("dark")
   ? themeBtnPath.setAttribute("fill", "white")
   : themeBtnPath.setAttribute("fill", "dark");
